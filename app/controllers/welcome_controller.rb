@@ -1,16 +1,17 @@
 class WelcomeController < ApplicationController
 
   def index
-    @all = Conversion.all()
+    @all = Conversion.find(:all, :order => "category_id")
     
-    #@all.map {|c| c.amount = kwh}
+    @all.map {|c| c.amount = co2}
     
-    @kwh = Conversion.find(5)
+    @co2 = Conversion.find(:first, :conditions => {:slug => "co2"})
+    @co2.amount = co2
     
-    @random = @all.sample
-    #if @random.amount < 1 then
-     # @random = @all.rand
-    #end
+    @random = @all.rand
+    if @random.amount < 1 then
+      @random = @all.rand
+    end
   end
 
   def about
@@ -21,15 +22,14 @@ class WelcomeController < ApplicationController
   
   private
   
-  # kwh
-  def kwh
-    if !params[:kwh].nil?
-      kwh = params[:kwh].to_i
-      if kwh < 1 then kwh = 1 end
+  def co2
+    if !params[:co2].nil?
+      co2 = params[:co2].to_i
+      if co2 < 1 then co2 = 1 end
     else
-      kwh = 1
+      co2 = 1
     end
-    return kwh
+    return co2
   end
 
 end

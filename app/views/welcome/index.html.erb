@@ -1,4 +1,5 @@
   <div id="left" class="converter">
+      <div class="fade"></div>
     
     <ul class="add-subtract">
       <li class="subtract"></li>
@@ -6,10 +7,10 @@
 	  <li class="r"></li>
     </ul>
     
-    <div id="<%= @kwh.slug %>" class="inner-converter type">
-      <div class="number"><%= @kwh.kwh %></div>  
-      <div class="unit">
-        <%= @kwh.unit %>
+    <div id="<%= @co2.slug %>" class="inner-converter type">
+      <div class="number"><%= @co2.amount %></div>  
+      <div class="unit" style="color: #1D5FB6;text-shadow: 0 0 3px #1D5FB6;">
+        <%= @co2.unit %>
       </div>
     </div>
     
@@ -23,11 +24,12 @@
     </div>
   </div>
   
+  
   <div id="equal">&asymp;</div>
- 
   
   <div id="right" class="converter">
-
+    <div class="fade"></div>
+    
     <ul class="add-subtract">
       <li class="subtract"></li>
       <li class="add"></li>
@@ -36,7 +38,7 @@
     
     
     <div id="<%= @random.slug %>" class="inner-converter">
-      <div class="number"><%= @random.kwh %></div>  
+      <div class="number"><%= @random.amount %></div>  
       <div class="unit" style="color: #B52A1D;text-shadow: 0 0 3px #B52A1D;">
         <%= @random.unit %>
       </div>

@@ -3,7 +3,7 @@ class ConversionController < ApplicationController
     
   def index
     @all = Conversion.all
-    @all.map {|c| c.amount = kwh}
+    @all.map {|c| c.amount = co2}
     
     respond_to do |format|
       format.xml {render :xml => @all.to_xml(:skip_types => true)  }
@@ -17,7 +17,7 @@ class ConversionController < ApplicationController
     
     @all = Conversion.all
     
-    @all.map {|c| c.amount = kwh}
+    @all.map {|c| c.amount = co2}
       
     respond_to do |format|
       format.js {render :layout => false }
@@ -29,7 +29,7 @@ class ConversionController < ApplicationController
     
     c = Conversion.find_by_slug(params[:id])
     
-    c.amount = kwh
+    c.amount = co2
     
     respond_to do |format|
       format.xml {render :xml => c.to_xml(:skip_types => true)  }
@@ -40,13 +40,13 @@ class ConversionController < ApplicationController
 
   private
   
-  def kwh
-    if !params[:kwh].nil? and !params[:kwh].blank?
-      kwh = params[:kwh].to_f
+  def co2
+    if !params[:co2].nil? and !params[:co2].blank?
+      co2 = params[:co2].to_f
     else
-      kwh = 1
+      co2 = 1
     end
-    return kwh
+    return co2
   end
   
 end
