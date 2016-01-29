@@ -1,0 +1,55 @@
+  <div id="left" class="converter">
+    
+    <ul class="add-subtract">
+      <li class="subtract"></li>
+      <li class="add"></li>
+	  <li class="r"></li>
+    </ul>
+    
+    <div id="<%= @kwh.slug %>" class="inner-converter type">
+      <div class="number"><%= @kwh.kwh %></div>  
+      <div class="unit">
+        <%= @kwh.unit %>
+      </div>
+    </div>
+    
+    <div class="conversions">
+      <h2>Choose your unit</h2>
+      <ul>
+        <% @all.each_with_index do |c, indx| %>
+          <li class="<%= c.slug %>" style="<%= c.style(indx) %>"><%= c.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="equal">&asymp;</div>
+ 
+  
+  <div id="right" class="converter">
+
+    <ul class="add-subtract">
+      <li class="subtract"></li>
+      <li class="add"></li>
+	  <li class="r"></li>
+    </ul>
+    
+    
+    <div id="<%= @random.slug %>" class="inner-converter">
+      <div class="number"><%= @random.kwh %></div>  
+      <div class="unit" style="color: #B52A1D;text-shadow: 0 0 3px #B52A1D;">
+        <%= @random.unit %>
+      </div>
+    </div>
+    
+    <div class="conversions">
+      <h2>Choose your unit</h2>
+      <ul>
+       <% @all.each_with_index do |c, indx| %>
+         <li class="<%= c.slug %>" style="<%= c.style(indx) %>"><%= c.name %></li>
+       <% end %>
+      </ul>
+    </div>
+    
+  </div>
+  

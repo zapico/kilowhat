@@ -1,0 +1,38 @@
+<p>
+  Hi there <fb:name uid="loggedinuser" useyou="false" />!
+Welcome to
+  your first app.
+</p>
+
+<h2><%= @q %></h2	>
+
+
+	<style type="text/css">
+	  div.slider { width:256px; margin:10px 0; background-color:#ccc; height:10px; position: relative; }
+	  div.slider div.handle { width:10px; height:15px; background-color:#f00; cursor:move; position: absolute; }
+	</style>
+
+	<div class="demo">
+	  <div id="zoom_slider" class="slider">
+	    <div class="handle"></div>
+	  </div>
+	  <div id="amount"><h1>?</h1></div>
+	</div>
+	
+	<script type="text/javascript">
+	  (function() {
+	    var zoom_slider = $('zoom_slider');
+
+	    new Control.Slider(zoom_slider.down('.handle'), zoom_slider, {
+	      range: $R(0, 200),
+	      sliderValue: 50,
+	      onSlide: function(value) {
+			$('amount').innerHTML = "<h1>" + parseInt(value) + "</h1>";
+	      },
+	      onChange: function(value) { 
+			$('amount').innerHTML = "<h1>" + parseInt(value) + "</h1>";
+	      }
+	    });
+
+	  })();
+	</script>
