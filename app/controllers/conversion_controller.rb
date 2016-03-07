@@ -19,9 +19,8 @@ class ConversionController < ApplicationController
     
     @all.map {|c| c.amount = co2}
       
-    respond_to do |format|
-      format.js {render :layout => false }
-    end
+   render json: @all
+
   end
 
   

@@ -1,56 +1,4 @@
-<!DOCTYPE htmlclass ConversionController < ApplicationController
-  #caches_page :data
-    
-  def index
-    @all = Conversion.all
-    @all.map {|c| c.amount = kwh}
-    
-    respond_to do |format|
-      format.xml {render :xml => @all.to_xml(:skip_types => true)  }
-      format.json {render :json => @all.to_json  }
-    end
-    
-  end
-
-  def data
-    ActiveRecord::Base.include_root_in_json = false
-    
-    @all = Conversion.all
-    
-    @all.map {|c| c.amount = kwh}
-      
-    respond_to do |format|
-      format.js {render :layout => false }
-    end
-  end
-
-  
-  def show
-    
-    c = Conversion.find_by_slug(params[:id])
-    
-    c.amount = kwh
-    
-    respond_to do |format|
-      format.xml {render :xml => c.to_xml(:skip_types => true)  }
-      format.json {render :json => c.to_json  }
-    end
-    
-  end
-
-  private
-  
-  def kwh
-    if !params[:kwh].nil? and !params[:kwh].blank?
-      kwh = params[:kwh].to_f
-    else
-      kwh = 1
-    end
-    return kwh
-  end
-  
-end
- PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
@@ -70,29 +18,59 @@ end
   	</script>
 
 	
-	<title>KiloWhat - increasing energy literacy</title>
+	<title>Kilo..what??</title>
 	
 </head>
 <body>
   <div id="container">
-  <div id="logo">
-	<% image = "/images/logo.png" %>
-     <a href="/"><%= image_tag image, :alt => 'home', :border=> '0' %></a>
-  </div>
-  <div id="menu">
-		<p><a href="/about">About</a> | <a href="/api">API</a></p>
-  </div>
+	  <div id="header">
+  		<div id="logo">
+			<% image = "/images/logo.png" %>
+   		 	<a href="/"><%= image_tag image, :alt => 'home', :border=> '0' %></a>
+			<p>increase your energy literacy</p>
+  	  	</div>
+  	 	<div id="menu">
+			
+  		</div>
+	</div> 
   <%= yield %>
+  
+   <div id="footer">
+	   <div class="footer_column">
+		 <h2>Kilowhat? is part of the research project Quantified Self for Energy at <a href="/about">KTH Media Technology</a>, in colllaboration with <a href="/about">Linnaeus University</a>.</h2>
+	   </div> 
+	    <div class="footer_column"> </div> 
+	   <div class="footer_column">
+		 <h3>About</h3>
+		 <p><a href="/about">More information</a></p>
+		 <p><a href="/data">Data sources</a></p>
+		  <p><a href="/pictures">Pictures</a></p>	
+		  <p><a href="/data">Contact us</a></p>		   
+	   </div>
+
+	   <div class="footer_column">
+		 <h3>Code</h3>
+	  	 <p>Developed by <a href="http://jorge.zapi.co">Jorge Zapico</a></p>
+		 <p>Forked from <a href="http://jorge.zapi.co">Carbon.to</a></p>
+		 <p>Available as open source at <a href="/about">Github</a></p>
+		 <p>You can also use our <a href="/api">API</a></p>
+	   </div>
+	   
+	   <div class="footer_column">
+  		 <p>Financed by Energimyndigheten</p>
+  	   </div> 
+	   </div>
+	   
+   </div>   
   </div>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1465382-29', 'auto');
+  ga('send', 'pageview');
+
 </script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-1465382-18");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-</body>
-</html>

@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   resources :games
   resources :welcome
   resources :logs
+  resources :conversion
   
   root "welcome#index"
    
@@ -67,7 +68,7 @@ Rails.application.routes.draw do
   get '/game' => 'game#index'
   
   get '/all.:format' => 'conversion#index'
-  get '/data.:format' => 'conversion#data'
+  get '/data' => 'conversion#data'
   get '/:id.:format' => 'conversion#show'
 
   

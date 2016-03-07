@@ -83,7 +83,7 @@ $(document).ready(function() {
   $(".conversions ul li").bind("click", function(){
     if ($('#'+$(this).attr("class")).length == 0){
       $(this).parent().parent().siblings(".inner-converter").attr("id", $(this).attr("class"));
-      $(this).parent().parent().parent().find('div.unit').css("color", $(this).css("background-color")).css('text-shadow',"0 0 3px "+$(this).css("background-color"));
+      //$(this).parent().parent().parent().find('div.unit').css("color", $(this).css("background-color")).css('text-shadow',"0 0 3px "+$(this).css("background-color"));
       if ($(this).parent().parent().parent().attr('id') == "left"){
         converter.paint_right(false);
         converter.paint_left(true);
@@ -268,16 +268,16 @@ Carbon.Converter.prototype = {
       case 1:
       case 2:
       case 3:
-        return "150px"
+        return "120px"
         break;
       case 4:
-        return "130px"
+        return "120px"
         break;
       case 5:
-        return "110px"
+        return "120px"
         break;
       case 6:
-        return "90px"
+        return "100px"
         break;
       case 7:
         return "70px"

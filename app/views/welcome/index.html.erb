@@ -1,6 +1,9 @@
+ <div id="main"> 
+ 
   <div id="left" class="converter">
-      <div class="fade"></div>
-    
+	  
+      <div class="converter_background">
+     </div>
     <ul class="add-subtract">
       <li class="subtract"></li>
       <li class="add"></li>
@@ -9,7 +12,7 @@
     
     <div id="<%= @co2.slug %>" class="inner-converter type">
       <div class="number"><%= @co2.amount %></div>  
-      <div class="unit" style="color: #1D5FB6;text-shadow: 0 0 3px #1D5FB6;">
+      <div class="unit" style="<%= @co2.style(@co2.category) %>">
         <%= @co2.unit %>
       </div>
     </div>
@@ -25,11 +28,10 @@
   </div>
   
   
-  <div id="equal">&asymp;</div>
-  
   <div id="right" class="converter">
     <div class="fade"></div>
-    
+     <div class="converter_background2">
+    </div>
     <ul class="add-subtract">
       <li class="subtract"></li>
       <li class="add"></li>
@@ -37,9 +39,9 @@
     </ul>
     
     
-    <div id="<%= @random.slug %>" class="inner-converter">
+    <div id="<%= @random.slug %>" class="inner-converter type">
       <div class="number"><%= @random.amount %></div>  
-      <div class="unit" style="color: #B52A1D;text-shadow: 0 0 3px #B52A1D;">
+      <div class="unit" style="<%= @random.style(@random.category) %>">
         <%= @random.unit %>
       </div>
     </div>
@@ -54,4 +56,5 @@
     </div>
     
   </div>
-  
+<div id="equal">&asymp;</div>
+</div>  

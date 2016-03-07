@@ -2,7 +2,7 @@ body{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin:0;
   padding:0;
-  background: #F5F5F5;
+  background: #333;
   font-size: 12px;
 }
 
@@ -12,14 +12,52 @@ h1{
 #container{
   position: relative;
   margin: 0 auto;
-  width: 1100px;
+  width: 100%;
 }
+#header{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height:150px;
+  background-color:#ADDDED;
+}
+#main{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height:650px;
+  background-color:#F5F5F5;
+}
+
+
+#footer{
+  position: relative;
+  margin: 0 auto;
+  bottom: 0px;
+  width: 100%;
+  height:225px;
+  background-color:#333;
+}
+.footer_column{
+  float: left;
+  margin: 20px 0px 10px 50px;
+  width: 250px;
+  height:200px;
+  color:#fff;
+}
+.footer_column a{
+  color:#fff;
+  text-decoration: none;
+  font-weight:bold;
+  border-bottom: 1px dotted;
+}
+
 
 #logo{
   position:relative;
   height: 150px;
-  top: 30px;
-  left: 0px;
+  top: 20px;
+  text-align:center;
 }
 
 #menu{
@@ -95,16 +133,36 @@ h1{
 }
 
 #equal{
-  float:left;
+  position:absolute;
   font-size: 140px;
   font-weight: bold;
-  top: 142px;
-  left: 24px;
+  top: 100px;
+  padding-left: 47%;
+  color:#fff;
 }
 
 .converter{
   position:relative;
-  width: 450px;
+  width: 50%;
+  background-color:#000;
+}
+.converter_background{
+    position:absolute;
+	height: 400px;
+    width: 100%;
+	opacity:0.3;
+    background-image:url("/images/solarpanel.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.converter_background2{
+    position:absolute;
+	height: 400px;
+    width: 100%;
+	opacity:0.3;
+    background-image:url("/images/bike.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .converter ul.add-subtract{
@@ -112,16 +170,16 @@ h1{
   margin: 0;
   padding: 0;
   list-style:none;
-  width: 150px;
+  width: 130px;
 }
 
 #left ul.add-subtract{
-  top:200px;
-  left: 100px;
+  top: 20px;
+  right: 10px;
 }
 #right ul.add-subtract{
-    top:200px;
-    left: 100px;
+    top: 20px;
+    right: 10px;
 }
 
 .converter ul.add-subtract li{
@@ -146,60 +204,7 @@ h1{
   background: #ACACAC url(/images/subtract.png) no-repeat 6px 6px;
   
 }
-.converter ul.add-subtract li.r{  <div id="left" class="converter">
-    
-    <ul class="add-subtract">
-      <li class="subtract"></li>
-      <li class="add"></li>
-	  <li class="r"></li>
-    </ul>
-    
-    <div id="<%= @kwh.slug %>" class="inner-converter type">
-      <div class="number"><%= @kwh.kwh %></div>  
-      <div class="unit">
-        <%= @kwh.unit %>
-      </div>
-    </div>
-    
-    <div class="conversions">
-      <h2>Choose your unit</h2>
-      <ul>
-        <% @all.each_with_index do |c, indx| %>
-          <li class="<%= c.slug %>" style="<%= c.style(indx) %>"><%= c.name %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-  
-  <div id="equal">&asymp;</div>
- 
-  
-  <div id="right" class="converter">
-
-    <ul class="add-subtract">
-      <li class="subtract"></li>
-      <li class="add"></li>
-	  <li class="r"></li>
-    </ul>
-    
-    
-    <div id="<%= @random.slug %>" class="inner-converter">
-      <div class="number"><%= @random.kwh %></div>  
-      <div class="unit" style="color: #B52A1D;text-shadow: 0 0 3px #B52A1D;">
-        <%= @random.unit %>
-      </div>
-    </div>
-    
-    <div class="conversions">
-      <h2>Choose your unit</h2>
-      <ul>
-       <% @all.each_with_index do |c, indx| %>
-         <li class="<%= c.slug %>" style="<%= c.style(indx) %>"><%= c.name %></li>
-       <% end %>
-      </ul>
-    </div>
-    
-  </div>
+.converter ul.add-subtract li.r{  
   
   background: #ACACAC url(/images/r.png) no-repeat 6px 6px;
   
@@ -218,7 +223,8 @@ h1{
 
 }
 .converter .inner-converter{
-
+	margin-top:50px;
+	padding-top:50px;
   height: 261px;
   cursor:pointer;
 }
@@ -228,17 +234,22 @@ h1{
 }
 
 .converter .inner-converter .number{
+  position:relative;
   width:100%;
-  font-size: 120px;
+  font-size: 100px;
   font-weight:bold;
   text-align:center;
-  text-shadow: 0 0 1px black;
+  color: #fff;
+  z-index:100;
 }
 .converter .inner-converter .unit{
+	position:relative;
   width:100%;
   font-size: 30px;
   font-weight:bold;
   text-align:center;
+  color: #fff; 
+  z-index:100;
 }
 
 .converter .inner-converter .unit span{
@@ -246,9 +257,12 @@ h1{
 }
 
 .converter .conversions{
+	margin-top:40px;
+  padding-top:10px;
+  padding-left:35px;
   width: 100%;
-  height:0;
-  background: #ACACAC;
+  height:350px;
+  background-color:#F5F5F5;
 }
 .converter .conversions ul{
   list-style:none;
