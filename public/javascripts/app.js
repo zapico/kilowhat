@@ -277,23 +277,23 @@ Carbon.Converter.prototype = {
         return "120px"
         break;
       case 6:
-        return "100px"
+        return "120px"
         break;
       case 7:
-        return "70px"
+        return "120px"
         break;
       case 8:
-        return "50px"
+        return "120px"
         break;
       case 9:
       case 10:
       case 11:
-        return "40px"
+        return "80px"
         break;
       case 12:
       case 13:
       case 14:
-        return "30px"
+        return "60px"
         break;
       case 15:
       case 16:
@@ -318,16 +318,16 @@ Carbon.Converter.prototype = {
         return "0px"
         break;
       case 4:
-        return "20px"
+        return "0px"
         break;
       case 5:
-        return "40px"
+        return "0px"
         break;
       case 6:
-        return "60px"
+        return "0px"
         break;
       case 7:
-        return "80px"
+        return "0px"
         break;
       case 8:
         return "90px"
