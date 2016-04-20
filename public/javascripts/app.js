@@ -135,7 +135,8 @@ Carbon.Converter.prototype = {
     this.conversions = conversions;
     this.index = index;
     this.current = 0;
-	
+    $("#converter_background").css("background-image", "url('/images/units/"+this.left_data().slug+".jpg')"); 
+    $("#converter_background2").css("background-image", "url('/images/units/"+this.right_data().slug+".jpg')"); 
   },
   data: function(id){
     return this.conversions[id];
@@ -210,6 +211,7 @@ Carbon.Converter.prototype = {
     var container = this.left();
     var number = container.find('.number');
     var unit = container.find('.unit');
+	var bg = container.find("converter_background");
     var html_amount = '';
     
     if(recalculate){
@@ -228,10 +230,11 @@ Carbon.Converter.prototype = {
       number.css('font-size',this.font_size(amount.toString().length));
       number.css('padding-top',this.font_padding(amount.toString().length));
 
-    } 
-    
+    }
+	console.log(this.left_data().slug);
+	$("#converter_background").css("background-image", "url('/images/units/"+this.left_data().slug+".jpg')");  
     unit.html(this.conversions[container.attr("id")].unit);
-	log.info(this.left_data().slug + " in " + this.right_data().slug);
+	//log.info(this.left_data().slug + " in " + this.right_data().slug);
   },
 
   paint_right: function(recalculate){
@@ -259,8 +262,8 @@ Carbon.Converter.prototype = {
     }
 
     unit.html(this.conversions[container.attr("id")].unit);
-		
-	log.info(this.left_data().slug + " in " + this.right_data().slug);
+	$("#converter_background2").css("background-image", "url('/images/units/"+this.right_data().slug+".jpg')"); 
+	//log.info(this.left_data().slug + " in " + this.right_data().slug);
   },
   
   font_size:function(digits){

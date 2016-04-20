@@ -147,22 +147,22 @@ h1{
   background-color:#000;
 }
 
-.converter_background{
+#converter_background{
     position:absolute;
 	height: 400px;
     width: 100%;
-	opacity:0.3;
-    background-image:url("/images/solarpanel.jpg");
-    background-size: 100% 100%;
+	opacity:0.4;
+    background-image:url("");
+    background-size: 100%;
     background-repeat: no-repeat;
 }
-.converter_background2{
+#converter_background2{
     position:absolute;
 	height: 400px;
     width: 100%;
-	opacity:0.3;
-    background-image:url("/images/bike.jpg");
-    background-size: 100% 100%;
+	opacity:0.4;
+    background-image:url("");
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 
