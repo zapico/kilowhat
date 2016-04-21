@@ -2,7 +2,7 @@ conversions = {
 	"led" : {"id":1,"slug":"led","unit":"hours with a LED lamp on","base_value":1,"name":"LED lamp","description":"led","icon":"","category_id":2,"carbon":0.006},
 	"fridge" : {"id":2,"slug":"fridge","unit":"years with a fridge on","base_value":1,"name":"New fridge","description":"led","icon":"","category_id":2,"carbon":200},
 	"bike" : {"id":3,"slug":"bike","unit":"km driving a electric assisted bike","base_value":1,"name":"Electric bike","description":"led","icon":"/images/solarpanel.jpg","category_id":3,"carbon":0.02},
-	"car" : {"id":4,"slug":"car","unit":"km driving an electric car","base_value":1,"name":"Electric car","description":"led","icon":"","category_id":3,"carbon":4.717},
+	"car" : {"id":4,"slug":"car","unit":"km driving an electric car","base_value":1,"name":"Electric car","description":"led","icon":"","category_id":3,"carbon":0.212},
 	"kwh" : {"id":5,"slug":"kwh","unit":"kwh","base_value":1,"name":"kwh","description":"led","icon":null,"category_id":1,"carbon":1.0},
 	"solarpanel" : {"id":6,"slug":"solarpanel","unit":"needed square meters of solar panels in a year.","base_value":1,"name":"Solar panel","description":"led","icon":"/images/solarpanel.jpg","category_id":1,"carbon":142.0},
 	"lightbulb" : {"id":7,"slug":"lightbulb","unit":"hours with a light bulb on","base_value":1,"name":"Light bulb","description":null,"icon":null,"category_id":2,"carbon":0.04},
