@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20100523114442) do
+ActiveRecord::Schema.define(version: 20160523121904) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        null: false
@@ -23,16 +23,14 @@ ActiveRecord::Schema.define(version: 20100523114442) do
   end
 
   create_table "conversions", force: :cascade do |t|
-    t.string   "slug",        null: false
-    t.string   "unit",        null: false
-    t.integer  "base_value",  null: false
-    t.string   "name",        null: false
-    t.text     "description"
-    t.string   "icon"
-    t.integer  "category_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.float    "carbon"
+    t.string  "slug",        null: false
+    t.string  "unit",        null: false
+    t.integer "base_value",  null: false
+    t.string  "name",        null: false
+    t.text    "description"
+    t.string  "icon"
+    t.integer "category_id", null: false
+    t.float   "carbon"
   end
 
   create_table "logs", force: :cascade do |t|
@@ -40,6 +38,17 @@ ActiveRecord::Schema.define(version: 20100523114442) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "session"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "category"
+    t.string   "q"
+    t.integer  "a1"
+    t.integer  "a2"
+    t.integer  "a3"
+    t.integer  "c"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

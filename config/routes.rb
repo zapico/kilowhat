@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   
-  resources :games
+  resources :game
   resources :welcome
   resources :logs
   resources :conversion
@@ -66,7 +66,9 @@ Rails.application.routes.draw do
   get '/log' => 'log#save'
   get '/showlog' => 'log#show'
   get '/game' => 'game#index'
-  
+  get '/results' => 'game#results'
+  get '/next' => 'game#next', as: 'next'
+   
   get '/all.:format' => 'conversion#index'
   get '/data' => 'conversion#data'
   get '/:id.:format' => 'conversion#show'

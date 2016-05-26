@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: 1
+  q: MyString
+  a1: 1
+  a2: 1
+  a3: 1
+  c: 1
+
+two:
+  category: 1
+  q: MyString
+  a1: 1
+  a2: 1
+  a3: 1
+  c: 1

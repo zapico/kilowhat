@@ -1,5 +1,6 @@
 class ConversionController < ApplicationController
-  #caches_page :data
+  #caches_page require "game_controller"
+  :data
     
   def index
     @all = Conversion.all

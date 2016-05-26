@@ -1,0 +1,10 @@
+<div id="question">The question is <%= q.q %></div>
+
+<div class="answer_button" id="1"><%= q.a1  %></div>
+<div class="answer_button" id="2"><%= q.a2 %></div>
+<div class="answer_button" id="3"><%= q.a3 %></div>
+
+<div id="counter"><%= @count+1 %> / 5</div>
+
+<div id="respuesta" style="display: none;" data-value="<%=  q.c.to_s %>"></div>
+<div id="count" style="display: none;" data-value="<%=  @count %>"></div>
