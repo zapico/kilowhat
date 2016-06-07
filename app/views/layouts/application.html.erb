@@ -11,10 +11,10 @@
   <script src="/data.js"></script>
   <script type="text/javascript" src="/javascripts/log4javascript.js"></script>
   <script type="text/javascript">
-	var log = log4javascript.getLogger();
-	var ajaxAppender = new log4javascript.AjaxAppender("/log");
+	var actlog = log4javascript.getLogger();
+	var ajaxAppender = new log4javascript.AjaxAppender("http://localhost:3000/kwhlog");
 	log4javascript.logLog.setQuietMode(true);
-	log.addAppender(ajaxAppender);
+	actlog.addAppender(ajaxAppender);
   	</script>
 
 	
@@ -33,23 +33,22 @@
   
    <div id="footer">
 	   <div class="footer_column">
-		 <h2>Kilowhat? is part of the research project Quantified Self for Energy at <a href="https://www.kth.se/en/csc/forskning/mid">KTH</a>, in colllaboration with <a href="http://lnu.se/subjects/media-technology?l=en">Linnaeus University</a>.</h2>
+		 <h2>Kilowhat? is part of a research project on Quantified Self for Energy at <a href="https://www.kth.se/en/csc/forskning/mid">KTH</a>, in colllaboration with <a href="http://lnu.se/subjects/media-technology?l=en">Linnaeus University</a>.</h2>
 	   </div> 
 	    <div class="footer_column"> </div> 
 	   <div class="footer_column">
 		 <h3>About</h3>
-		 <p><a href="/about">More information</a></p>
-		 <p><a href="/data">Data sources</a></p>
-		  <p><a href="/pictures">Pictures</a></p>	
-		  <p><a href="/data">Contact us</a></p>		   
+		 <p><a href="/">More information</a></p>
+		 <p><a href="/">Data sources</a></p>
+		  <p><a href="/">Pictures</a></p>	
+		  <p><a href="/">Contact us</a></p>		   
 	   </div>
 
 	   <div class="footer_column">
 		 <h3>Code</h3>
-	  	 <p>Developed by <a href="http://jorge.zapi.co">Jorge Zapico</a></p>
 		 <p>Forked from <a href="https://github.com/hinke/Carbon.to">Carbon.to</a></p>
 		 <p>Available as open source at <a href="https://github.com/zapico/kilowhat">Github</a></p>
-		 <p>You can also use our <a href="/api">API</a></p>
+		 <p>You can also use our <a href="/">API</a></p>
 	   </div>
 	   
 	   <div class="footer_column">

@@ -118,6 +118,7 @@ class GameController < ApplicationController
     session[:a3] = false
     session[:a4] = false
     session[:a5] = false
+    session[:test] = params[:test]
     @q = questions[0]
     session[:count] = @count
   end 
@@ -166,6 +167,23 @@ class GameController < ApplicationController
     @c4 = Question.find(session[:q4].to_i).c.to_i
     @c5 = Question.find(session[:q5].to_i).c.to_i
     @correct = 0
+    log = Log.new
+    log.q1 = session[:q1].to_i
+    log.q2 = session[:q2].to_i
+    log.q3 = session[:q3].to_i
+    log.q4 = session[:q4].to_i
+    log.q5 = session[:q5].to_i
+    log.a1 = session[:a1].to_i
+    log.a2 = session[:a2].to_i
+    log.a3 = session[:a3].to_i
+    log.a4 = session[:a4].to_i
+    log.a5 = session[:a5].to_i
+    log.test_name = session[:test]
+    log.session = session[:session_id].to_s
+    log.save
+    
+    
+    
     if (@a1 == @c1) then 
       @correct+=1 
       query1 = "Question.find(session[:q1].to_i).a" + @a1.to_s

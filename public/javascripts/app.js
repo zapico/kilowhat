@@ -55,13 +55,11 @@ $(document).ready(function() {
       amount = 1;
       conv.find(".number").html(amount);
       converter.paint_right(true);
-	  //log.info("Reset "+ this.left_data().slug);
     }else{
       var amount = converter.right_amount();
       amount = 1;
       conv.find(".number").html(amount);
       converter.paint_left(true);
-	  //log.info("Reset "+ this.right_data().slug);
     }
   });
 
@@ -231,10 +229,10 @@ Carbon.Converter.prototype = {
       number.css('padding-top',this.font_padding(amount.toString().length));
 
     }
-	console.log(this.left_data().slug);
 	$("#converter_background").css("background-image", "url('/images/units/"+this.left_data().slug+".jpg')");  
     unit.html(this.conversions[container.attr("id")].unit);
-	//log.info(this.left_data().slug + " in " + this.right_data().slug);
+	//console.log(this.left_data().slug + " in " + this.right_data().slug);
+	//actlog.info(this.left_data().slug + " in " + this.right_data().slug);
   },
 
   paint_right: function(recalculate){
@@ -263,7 +261,7 @@ Carbon.Converter.prototype = {
 
     unit.html(this.conversions[container.attr("id")].unit);
 	$("#converter_background2").css("background-image", "url('/images/units/"+this.right_data().slug+".jpg')"); 
-	//log.info(this.left_data().slug + " in " + this.right_data().slug);
+	//actlog.info(this.left_data().slug + " in " + this.right_data().slug);
   },
   
   font_size:function(digits){
