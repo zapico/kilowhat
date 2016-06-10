@@ -105,7 +105,7 @@ class GameController < ApplicationController
 
   def index
     # Select random unit and initialize content
-    questions = Question.limit(5).order("Random()")
+    questions = Question.limit(5).order("RAND()")
     @count = 0
     @correct = 0
     session[:q1] = questions[0].id
