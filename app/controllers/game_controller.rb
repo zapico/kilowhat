@@ -3,6 +3,7 @@ class GameController < ApplicationController
   def index
     # Select random unit and initialize content
     questions = Question.limit(10).order("RAND()")
+    #questions = Question.limit(10).order("Random()")
     @count = 0
     @correct = 0
     for i in 0..9
@@ -31,20 +32,20 @@ class GameController < ApplicationController
   def results
     @correct = 0
     for i in 0..9
-        puts("q " + i.to_s + " " + session[":q"+i.to_s].to_s)
-        puts("a " + i.to_s + " " + session[":a"+i.to_s].to_s)
+        puts("q" + i.to_s + " " + session[":q"+i.to_s].to_s)
     end
     # Prepare answers to show
     @q1 = ""
     for i in 0..9
-      j = i+1
-      if (session[":a"+i.to_s].to_i == Question.find(session[":q"+i.to_s].to_i).c.to_i) then 
+      question_id = session[":q"+i.to_s].to_i
+      answer = session[":a"+i.to_s].to_i
+      correct = Question.find(question_id).c.to_i
+      query1 = "Question.find(#{question_id}).a" + answer.to_s
+      if ( answer == correct ) then 
         @correct+=1 
-        query1 = "Question.find(session[:q#{j}].to_i).a" + session[":a"+i.to_s].to_s
-        @q1 += Question.find(session[":q"+i.to_s].to_i).q + " Correct answer! " + eval(query1) + "</br> "
+        @q1 += Question.find(question_id).q + " Correct answer! " + eval(query1)
       else  
-        query1 = "Question.find(session[:q#{j}].to_i).a" + session[":a"+i.to_s].to_s
-        @q1 += Question.find(session[":q"+i.to_s].to_i).q + " You answered " + eval(query1) + ". The correct answer was: " + Question.find(session[":q"+i.to_s].to_i).c.to_s + "/n"
+        @q1 += Question.find(question_id).q + " You answered " + eval(query1) + ". The correct answer was: " + Question.find(question_id).c.to_s
       end
     end
     
