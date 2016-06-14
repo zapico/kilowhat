@@ -43,9 +43,10 @@ class GameController < ApplicationController
       query1 = "Question.find(#{question_id}).a" + answer.to_s
       if ( answer == correct ) then 
         @correct+=1 
-        @q1 += Question.find(question_id).q + " Correct answer! " + eval(query1)
-      else  
-        @q1 += Question.find(question_id).q + " You answered " + eval(query1) + ". The correct answer was: " + Question.find(question_id).c.to_s
+        @q1 += "<div class='answer_frame'><div class='correct'></div><div class='answer'><b>" + Question.find(question_id).q + "</b></br><green> Correct answer! </green>  " + eval(query1) + "</div></div>"
+      else 
+        query2 = "Question.find(#{question_id}).a" + Question.find(question_id).c.to_s 
+        @q1 += "<div class='answer_frame'><div class='wrong'></div><div class='answer'><b>" + Question.find(question_id).q + "</b></br><red> You answered  </red>" + eval(query1) + ". The correct answer was: " + eval(query2) + "</div></div>"
       end
     end
     
