@@ -75,7 +75,7 @@ class GameController < ApplicationController
     result.a10 = session[:a9].to_i
     result.test_name = session[:test]
     result.session = session[:session_id].to_s
-    #result.save
+    result.save
     
   end
   
