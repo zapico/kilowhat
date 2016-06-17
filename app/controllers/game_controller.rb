@@ -3,7 +3,7 @@ class GameController < ApplicationController
   def index
     # Select random unit and initialize content
     questions = Question.limit(10).order("RAND()")
-    #questions = Question.limit(10).order("Random()")
+   # questions = Question.limit(10).order("Random()")
     @count = 0
     @correct = 0
     for i in 0..9
@@ -53,29 +53,34 @@ class GameController < ApplicationController
     # Save answers in db
     # Agh! I did not manage to fix it with a loop :(
     result = Log.new
-    result.q1 = session[:q0].to_i
-    result.q2 = session[:q1].to_i
-    result.q3 = session[:q2].to_i
-    result.q4 = session[:q3].to_i
-    result.q5 = session[:q4].to_i
-    result.q6 = session[:q5].to_i
-    result.q7 = session[:q6].to_i
-    result.q8 = session[:q7].to_i
-    result.q9 = session[:q8].to_i
-    result.q10 = session[:q9].to_i
-    result.a1 = session[:a0].to_i
-    result.a2 = session[:a1].to_i
-    result.a3 = session[:a2].to_i
-    result.a4 = session[:a3].to_i
-    result.a5 = session[:a4].to_i
-    result.a6 = session[:a5].to_i
-    result.a7 = session[:a6].to_i
-    result.a8 = session[:a7].to_i
-    result.a9 = session[:a8].to_i
-    result.a10 = session[:a9].to_i
+    result.q1 = session[":q0"].to_i
+    result.q2 = session[":q1"].to_i
+    result.q3 = session[":q2"].to_i
+    result.q4 = session[":q3"].to_i
+    result.q5 = session[":q4"].to_i
+    result.q6 = session[":q5"].to_i
+    result.q7 = session[":q6"].to_i
+    result.q8 = session[":q7"].to_i
+    result.q9 = session[":q8"].to_i
+    result.q10 = session[":q9"].to_i
+    result.a1 = session[":a0"].to_i
+    result.a2 = session[":a1"].to_i
+    result.a3 = session[":a2"].to_i
+    result.a4 = session[":a3"].to_i
+    result.a5 = session[":a4"].to_i
+    result.a6 = session[":a5"].to_i
+    result.a7 = session[":a6"].to_i
+    result.a8 = session[":a7"].to_i
+    result.a9 = session[":a8"].to_i
+    result.a10 = session[":a9"].to_i
     result.test_name = session[:test]
     result.session = session[:session_id].to_s
     result.save
+    
+    for i in 0..9
+        session[":q"+i.to_s] = 0
+        session[":a"+i.to_s] = false
+    end
     
   end
   
