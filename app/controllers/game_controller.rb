@@ -2,8 +2,8 @@ class GameController < ApplicationController
 
   def index
     # Select random unit and initialize content
-    questions = Question.limit(10).order("RAND()")
-   # questions = Question.limit(10).order("Random()")
+    # questions = Question.limit(10).order("RAND()")
+   questions = Question.limit(10).order("Random()")
     @count = 0
     @correct = 0
     for i in 0..9
