@@ -1,11 +1,11 @@
 class WelcomeController < ApplicationController
 
   def index
-    @all = Conversion.all
+    @all = Conversion.order(:category_id)
     
-    @all.map {|c| c.amount = 100}
+    @all.map {|c| c.amount = 1}
     
-    @co2 = Conversion.find(5)
+    @co2 =   Conversion.find(5)
     
     @random = @all.sample
     while @random.amount <= 1 do
