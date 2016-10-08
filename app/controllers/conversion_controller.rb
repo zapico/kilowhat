@@ -3,7 +3,7 @@ class ConversionController < ApplicationController
   :data
     
   def index
-    @all = Conversion.all
+    @all = Conversion.order(:category_id)
     @all.map {|c| c.amount = co2}
     
     respond_to do |format|
@@ -16,7 +16,7 @@ class ConversionController < ApplicationController
   def data
     ActiveRecord::Base.include_root_in_json = false
     
-    @all = Conversion.all
+    @all = Conversion.order(:category_id)
     
     @all.map {|c| c.amount = co2}
       

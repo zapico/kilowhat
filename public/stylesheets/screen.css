@@ -404,3 +404,11 @@ h1{
 		 font-size:35px;
 		 margin-top:50px;
 	  } 
+	  
+.conversions ul li.c1 { background-color:#f8ea76;}
+.conversions ul li.c2 { background-color:#dcd59a;}
+.conversions ul li.c3 { background-color:#dbdfdf;}
+.conversions ul li.c4 { background-color:#ffb891;}
+.conversions ul li.c5 { background-color:#ff9090;}
+
+
