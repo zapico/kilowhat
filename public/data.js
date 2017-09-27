@@ -11,12 +11,15 @@ conversions = {
 	"heating" : {"id":11,"slug":"heating","unit":"hours heating a house with electric radiators","base_value":1,"name":"Heating","description":"average","icon":null,"category_id":0,"carbon":2.4},
 	"heatpump" : {"id":12,"slug":"heatpump","unit":"hours heating a house with a geothermal heatpump","base_value":1,"name":"Heating with heat pump","description":null,"icon":null,"category_id":0,"carbon":0.8},
 	"coal" : {"id":13,"slug":"coal","unit":"kg of coal needed to produce that electricity","base_value":1,"name":"Coal","description":null,"icon":null,"category_id":1,"carbon":2.1198},
-	"treadmill" : {"id":14,"slug":"treadmill","unit":"hours running in a treadmill to produce that electricity","base_value":1,"name":"Treadmill","description":null,"icon":null,"category_id":1,"carbon":0.1}
-	
+	"treadmill" : {"id":14,"slug":"treadmill","unit":"hours running in a treadmill to produce that electricity","base_value":1,"name":"Treadmill","description":null,"icon":null,"category_id":1,"carbon":0.1},
+	"hamburger" : {"id":15,"slug":"hamburger","unit":"hamburgers (energy needed to produce)","base_value":1,"name":"Hamburger","description":"","icon":"/images/units/burger.jpg","category_id":5,"carbon":3.9},
+	"mobile" : {"id":16,"slug":"mobile","unit":"mobile phone charges","base_value":1,"name":"Mobile phone","description":"","icon":"/images/units/mobile.jpg","category_id":2,"carbon":0.00545},
+	"oldcar" : {"id":17,"slug":"oldcar","unit":"km driving a gasoline car (eq)","base_value":1,"name":"Car","description":null,"icon":"/images/units/car.jpg","category_id":3,"carbon":0.8},
+	"washing" : {"id":18,"slug":"washing","unit":"washing machine loads","base_value":1,"name":"Washing Machine","description":null,"icon":"/images/units/washing.jpg","category_id":2,"carbon":0.96}
 };
 
 index = [
-  "kwh" ,  "bike" , "car" ,  "lightbulb" , "tv" , "led", "fridge" , "heating" , "heatpump" , "coal", "treadmill" , "solarpanel"
+  "kwh" ,  "bike" , "car" ,  "lightbulb" , "tv" , "led", "fridge" , "heating" , "heatpump" , "coal", "treadmill" , "solarpanel", "hamburger", "mobile", "oldcar", "washing"
 ];
 
 
